@@ -20,7 +20,7 @@ class DeliveryCell: UITableViewCell {
     }()
     lazy var lblDescription: UILabel  = {
         let lblDescription = UILabel()
-        lblDescription.numberOfLines = 0
+        lblDescription.numberOfLines = 3
         return lblDescription
     }()
     
