@@ -48,7 +48,9 @@ class CoreDataManager: NSObject {
     //MARK: - FetchRecords Cached
     func fetchAllRecords(entity: String) -> [NSManagedObject]? {
         
+        let sortDescriptor = NSSortDescriptor(key: "idValue", ascending: true)
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        request.sortDescriptors = [sortDescriptor]
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
